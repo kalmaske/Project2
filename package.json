@@ -10,10 +10,17 @@
     "type": "git",
     "url": "git+https://github.com/kalmaske/Project2.git"
   },
-  "author": "",
+  "author": "Khadija Almaskeen, Kelly Watkins, Graham Lawing",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/kalmaske/Project2/issues"
   },
-  "homepage": "https://github.com/kalmaske/Project2#readme"
+  "homepage": "https://github.com/kalmaske/Project2#readme",
+  "dependencies": {
+    "body-parser": "^1.18.0",
+    "express": "^4.15.4",
+    "express-handlebars": "^3.0.0",
+    "method-override": "^2.3.9",
+    "mysql": "^2.14.1"
+  }
 }
