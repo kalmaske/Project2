@@ -10,7 +10,6 @@ var config = {
     messagingSenderId: "412484960663"
   };
   firebase.initializeApp(config);
-
 //   Get elements
 const txtEmail = document.getElementById('txtEmail');
 const txtPassword = document.getElementById('txtPassword');
@@ -24,7 +23,36 @@ btnLogin.addEventListener('click', e=> {
     const email = txtEmail.value;
     const pass = txtPassword.value;
     const auth = firebase.auth();
-    
-})
+    // Sign in
+    const promise = auth.signInWithEmailAndPassword(email, pass);
+    promise.catch(e => console.log(e.message));
+});
+
+// Add signup event
+btnSignUp.addEventListener('click', e => {
+    // Get email and pass
+    const email = txtEmail.value;
+    const pass = txtPassword.value;
+    const auth = firebase.auth();
+    // Sign in
+    const promise = auth.createUserWithEmailandPassword(email, pass);
+    promise
+    .catch(e => console.log(e.message));
+});
+
+btnLogout.addEventListener('click', e => {
+    firebase.auth().signOut();
+});
+
+// Add a realtime listener
+firebase.auth().onAuthStateChanged(firebaseUser => {
+     if(firebaseUser) {
+         console.log(firebaseUser);
+         btnLogout.classList.remove('hide');
+    } else {
+        console.log('not logged in');
+        btnLogout.classList.remove('hide');
+    }
+});
 
 }());
