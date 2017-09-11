@@ -2,12 +2,12 @@
 
 // Initialize Firebase
 var config = {
-    apiKey: "AIzaSyDgsWPzfrouPJ57xj-OfQXPMnkm7sNlaA8",
-    authDomain: "ashevillebb-64190.firebaseapp.com",
-    databaseURL: "https://ashevillebb-64190.firebaseio.com",
-    projectId: "ashevillebb-64190",
-    storageBucket: "ashevillebb-64190.appspot.com",
-    messagingSenderId: "231917444194"
+    apiKey: "AIzaSyBdCIC3vHp7zDCU9G4wKxcdl7AVHQVJTYA",
+    authDomain: "asheville-b5f13.firebaseapp.com",
+    databaseURL: "https://asheville-b5f13.firebaseio.com",
+    projectId: "asheville-b5f13",
+    storageBucket: "asheville-b5f13.appspot.com",
+    messagingSenderId: "412484960663"
   };
   firebase.initializeApp(config);
 

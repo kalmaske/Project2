@@ -3,11 +3,11 @@ var router = express.Router();
 var asheville = require('../models/asheville.js');
 
 router.get('/', function (req, res) {
-	res.redirect('/listings')
+	res.redirect('/asheville')
 });
 
 router.get('/listings', function (req, res) {
-	listings.all(function (data) {
+	asheville.all(function (data) {
 		var hbsObject = {
 			listings: data
 		};
