@@ -10,6 +10,9 @@ var asheville = {
 		SeqORM.create('listings', col, vals, function(res){
 			cb(res);
 		});
+
+
+		
 	},
 	update: function(objColVals, condition, cb){
 		SeqORM.update('listings', objColVals, condition, function(res){
