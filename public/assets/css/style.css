@@ -9,3 +9,51 @@ body{
 	color: #282626;
 }
 
+#map {
+    height: 400px;
+    width: 800px;
+    color: black;
+    margin: 0 auto;
+}
+
+footer {
+    color: #0F0D0D !important;
+}
+
+
+#pac-input {
+    background-color: #fff;
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 300;
+    margin-left: 12px;
+    padding: 0 11px 0 13px;
+    text-overflow: ellipsis;
+    width: 400px;
+    color: black;
+}
+
+#pac-input:focus {
+    border-color: #4d90fe;
+}
+
+@media screen and (max-width: 640px) {
+    .row .col.s6 {
+        width: 95%;
+    }
+    #map {
+        width: 95%
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .row .col.s6 {
+        width: 95%;
+    }
+
+    #map {
+        width: 95%
+    }
+}
+
+@media screen and (max-width:980px) {}
