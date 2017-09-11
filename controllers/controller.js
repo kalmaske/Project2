@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var burgers = require('../models/asheville.js');
+var asheville = require('../models/asheville.js');
 
 router.get('/', function (req, res) {
 	res.redirect('/asheville')
@@ -9,7 +9,7 @@ router.get('/', function (req, res) {
 router.get('/asheville', function (req, res) {
 	asheville.all(function (data) {
 		var hbsObject = {
-			asheville: data
+			listings: data
 		};
 
 		console.log(hbsObject);
@@ -19,7 +19,7 @@ router.get('/asheville', function (req, res) {
 });
 
 router.post('/asheville/create', function (req, res) {
-	burgers.create(['place_name'], [req.body.place_name], function (data) {
+	asheville.create(['name'], [req.body.name], function (data) {
 		res.redirect('/')
 	});
 });
