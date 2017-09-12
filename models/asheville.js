@@ -1,5 +1,6 @@
 var SeqORM = require('../config/SeqORM.js');
 
+
 var asheville = {
 	all: function(cb){
 

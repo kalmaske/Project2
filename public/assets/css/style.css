@@ -10,6 +10,9 @@ body{
 	color: #282626;
 }
 */
+.select-dropdown{
+    color:#A6A4A4;
+}
 
 body { 
     background-image: url("/assets/images/bg.png");
@@ -23,7 +26,9 @@ body {
     color: black;
     margin: 0 auto;
 }
-
+nav{
+    background-color: #26a69a;
+}
 
 .page-footer {
     padding: 10px;
