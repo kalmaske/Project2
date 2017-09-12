@@ -18,8 +18,12 @@ body{
     margin: 0 auto;
 }
 
-footer {
-    color: #0F0D0D !important;
+footer,
+.page-footer,
+.footer-copyright,
+#copyright {
+    background-color: white;
+    color: black;
 }
 
 
@@ -52,7 +56,7 @@ footer {
     font-family: 'Dancing Script', cursive;
 }
 
-/*
+
 @media screen and (max-width: 640px) {
     .row .col.s6 {
         width: 95%;
@@ -72,4 +76,4 @@ footer {
     }
 }
 
-@media screen and (max-width:980px) {}*/
+@media screen and (max-width:980px) {}
