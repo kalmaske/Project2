@@ -18,6 +18,19 @@ body {
     background-repeat: repeat;
     background-attachment: fixed;
 }
+
+*/
+.select-dropdown{
+    color:#A6A4A4;
+}
+
+body { 
+    background-image: url("/assets/images/bg.png");
+    background-repeat: repeat;
+    background-attachment: fixed;
+}
+
+
 #map {
     height: 400px;
     width: 800px;
@@ -27,6 +40,7 @@ body {
 nav{
     background-color: #26a69a;
 }
+
 .page-footer {
     padding: 10px;
     background-color: #26a69a;
@@ -46,16 +60,19 @@ nav{
 #pac-input:focus {
     border-color: #4d90fe;
 }
+
 .responsive-img {
     max-height: 100%;
     height: auto;
 }
+
 h1 {
     color: #141313;
     position: relative;
     font-size: 60px;
     font-family: 'Dancing Script', cursive;
 }
+
 @media screen and (max-width: 640px) {
     .row .col.s6 {
         width: 95%;

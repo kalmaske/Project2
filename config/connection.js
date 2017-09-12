@@ -1,5 +1,6 @@
 
-module.exports = connection;var mysql = require('mysql');
+module.exports = connection;
+var mysql = require('mysql');
 var connection;
 
 if(process.env.JAWSDB_URL) {
@@ -9,7 +10,7 @@ if(process.env.JAWSDB_URL) {
         root: 3000,
         host: 'localhost',
         user: 'root',
-        password: 'Lawingbo42!',
+        password: 'Newchapter_2017',
         database: 'asheville_db',
     });
 };
@@ -22,4 +23,4 @@ connection.connect(function(err) {
     console.log('connected as id ' + connection.threadId);
 });
 
-module.exports = connection; 
+module.exports = connection;

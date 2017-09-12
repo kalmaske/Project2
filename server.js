@@ -7,6 +7,7 @@ var passport = require("./config/passport");
 var app = express();
 var db = require("./models");
 
+app.use(express.static('public'));
 // We need to use sessions to keep track of our user's login status
 app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
 app.use(passport.initialize());
@@ -15,8 +16,12 @@ app.use(passport.session());
 
 //Serve static content from public
 
+//app.use(express.static(process.cwd() + './public'));
+
+
+
 app.use(bodyParser.json());
-app.use(express.static("public"));
+//app.use(express.static("public"));
 app.use(bodyParser.urlencoded({
 	extended: false
 }))
