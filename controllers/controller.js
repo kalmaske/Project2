@@ -6,7 +6,7 @@ router.get('/', function (req, res) {
 	res.redirect('/asheville')
 });
 
-router.get('/listings', function (req, res) {
+router.get('/asheville', function (req, res) {
 	asheville.all(function (data) {
 		var hbsObject = {
 			listings: data
