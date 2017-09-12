@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- reset -->
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
+    <title>STAY IN ASHEVILLE</title>
+    <!-- style.css -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
+</head>
+    <body>
+        <nav>
+            <div class="nav-wrapper">
+              <a><p> <img src="./assets/images/airbnb.png" alt="logo" align="left" width ="60px" height="60px"></p></a>
+              <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="/login">Log In</a></li>
+                <li><a href="/signup">Sign Up</a></li>
+              </ul>
+            </div>
+          </nav>
+        <br/>
+        <br/>
+    
+    <div class="container">
+        <div class="row">
+            <h1>Welcome to Asheville</h1>
+            <hr>
+            <div class="col l12 m12 s12 xl12">
+                <!-- start carosel -->
+                <div class="carousel carousel-slider center">
+                    <div class="carousel-fixed-item center">
+                        
+                    </div>
+                    <a id="img1" data-index="0" class="carousel-item" href="#one!">
+                        <img class="responsive-img" src="./assets/images/1.png">
+                    </a>
+                    <a id="img2" data-index="1" class="carousel-item" href="#two!">
+                        <img class="responsive-img" src="./assets/images/3.png">
+                    </a>
+                    <a id="img3" data-index="2" class="carousel-item" href="#three!">
+                        <img class="responsive-img" src="./assets/images/6.png">
+                    </a>
+                    <a id="img3" data-index="2" class="carousel-item" href="#three!">
+                        <img class="responsive-img" src="./assets/images/10.png">
+                    </a>
+                    <a id="img3" data-index="2" class="carousel-item" href="#three!">
+                        <img class="responsive-img" src="./assets/images/8.png">
+                    </a>
+                </div>
+            </div>
+        <!-- end carosel -->
+        </div>
+        <br/>
+        <br/>
+        <div class="row">
+            <form class="col s12">
+              <div class="row">
+                <div class="input-field col s4">
+                  <input id="full_name" type="text" class="validate">
+                  <label for="full_name">Full Name</label>
+                </div>
+                <div class="input-field col s4">
+                  <input id="zip_code" type="text" class="validate">
+                  <label for="zip_code">Zip Code</label>
+                </div>
+                  <div class="input-field col s4" id= "roomType">
+                    <select>
+                      <option value="" disabled selected>Choose your option</option>
+                      <option value="Entire Home/Apt">Entire Home/Apt</option>
+                      <option value="Private room">Private Room</option>
+                      <option value="Shared room">Shared Room</option>
+                    </select>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="input-field col s4">
+                      <input id="price" type="text" class="validate">
+                      <label for="price">Price</label>
+                  </div>
+                  <div class="input-field col s4">
+                    <input id="min_night" type="text" class="validate">
+                    <label for="email">Minimum Night Stay</label>
+                  </div>
+                  <div class="input-field col s4">
+                    <input id="availability" type="text" class="validate">
+                    <label for="availability">Availability</label>
+                  </div>
+              </div>
+            </form>
+            <form >
+                <button class="btn waves-effect" type="submit" name="action">Submit
+                </button>
+            </form>
+          </div>
+    </div>
+    <div class="row">
+            <br/>
+            <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+            <div id="map">
+             
+            </div>
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAau4g_tNux7pY0Cf_OuHccTHnZVLN-414&libraries=places&callback=initAutocomplete" async defer></script>
+            
+    </div>
+    <footer class="page-footer">   
+            
+            Data provided by ©Google
+        </footer>
+    <script>
+        $(document).ready(function(){
+           ('#submit').on("click", function () {
+            var userInput = {
+                full_name: $('#full_name'),
+                zip_code: $('#zip_code'),
+                roomType: $('#roomType'),
+                price: $('#price'),  
+                min_night: $('#min_night'),
+                availability: $('#availability')
+            } 
+          $('select').material_select();
+          $('.carousel').carousel({dist:0});
+          $('.carousel.carousel-slider').carousel({fullWidth: true});
+          window.setInterval(function(){$('.carousel').carousel('next')},5000);
+        });
+        
+
+    </script>
+</body>
+
+    
+</html>

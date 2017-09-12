@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var asheville = require('../models/asheville.js');
+var db = require('../models');
 
 router.get('/', function (req, res) {
 	res.redirect('/asheville')
