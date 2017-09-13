@@ -36,12 +36,12 @@ app.set('view engine', 'handlebars');
 var routes = require('./controllers/controller.js');
 app.use('/', routes);
 
-// Requiring our routes
-require("./routes/html-routes.js")(app);
-require("./routes/api-routes.js")(app);
+// // Requiring our routes
+// require("./routes/html-routes.js")(app);
+// require("./routes/api-routes.js")(app);
 
 var PORT = process.env.PORT || 8008;
-db.sequelize.sync().then(function() {
+db.sequelize.sync({force:true}).then(function() {
     app.listen(PORT, function() {
       console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT);
     });

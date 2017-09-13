@@ -94,26 +94,15 @@
             <div id="map">
                 {{{this.map}}}
             </div>
-
-
         </div>
     </div>
     <footer class="page-footer">
         Data provided by ©Google
     </footer>
     <script>
+ 
         $(document).ready(function () {
-            $('#submit').on("click", function () {
-                var userInput = {
-                    full_name: $('#full_name'),
-                    zip_code: $('#zip_code'),
-                    roomType: $('#roomType'),
-                    price: $('#price'),
-                    min_night: $('#min_night'),
-                    availability: $('#availability')
-                }
-                consol.log(userInput);
-            });
+
             $('select').material_select();
             $('.carousel').carousel({
                 dist: 0
@@ -122,9 +111,9 @@
                 fullWidth: true
             });
             window.setInterval(function () {
-                $('.carousel').carousel('next')
+                $('.carousel').carousel('next');
             }, 5000);
-            $(".dropdown-button btn")
         });
+
     </script>
 </body>

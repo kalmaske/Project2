@@ -7,7 +7,8 @@ router.get('/', function (req, res) {
 });
 
 router.get('/asheville', function (req, res) {
-	asheville.all(function (data) {
+	db.asheville.findAll({})
+		.then ( function (data) {
 		var hbsObject = {
 			listings: data
 		};
@@ -20,7 +21,7 @@ router.get('/asheville', function (req, res) {
 
 router.post('/asheville/create', function (req, res) {
 
-	asheville.create(['name'], [req.body.name], function (data) {
+	db.listings.create(['name'], [req.body.name], function (data) {
 		res.redirect('/')
 	});
 });
@@ -30,7 +31,7 @@ router.put('/asheville/update/:id', function (req, res) {
 
 	console.log('condition ', condition);
 
-	asheville.update({
+	db.listings.update({
 		'name': req.body.name
 	}, condition, function (data) {
 		res.redirect('/asheville');
