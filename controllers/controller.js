@@ -8,15 +8,15 @@ router.get('/', function (req, res) {
 
 router.get('/asheville', function (req, res) {
 	db.asheville.findAll({})
-		.then ( function (data) {
-		var hbsObject = {
-			listings: data
-		};
+		.then(function (data) {
+			var hbsObject = {
+				listings: data
+			};
 
-		console.log(hbsObject);
+			console.log(hbsObject);
 
-		res.render('index', hbsObject);
-	});
+			res.render('index', hbsObject);
+		});
 });
 
 router.post('/asheville/create', function (req, res) {
