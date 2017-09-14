@@ -3,12 +3,14 @@
         <div class="nav-wrapper">
             <img src="./assets/images/airbnb.png" alt="logo" align="left" width="60px" height="60px">
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="/login">Log In</a></li>
-                <li><a href="/signup">Sign Up</a></li>
+                <li><a href="/logout">Log Out</a></li>
+                {{!-- <li><a href="/signup">Sign Up</a></li> --}}
             </ul>
         </div>
     </nav>
     <br/>
+    <br/>
+
     <div class="container">
         <div class="row">
 
@@ -37,7 +39,46 @@
         <!-- end carosel -->
     </div>
     <br/>
-    <p>Relax and unwind in the heart of Asheville</p>
+    <br/>
+    <div class="row">
+        <form class="col s12">
+            <div class="row">
+                <div class="input-field col s4">
+                    <input id="full_name" type="text" class="validate">
+                    <label for="full_name">Full Name</label>
+                </div>
+                <div class="input-field col s4">
+                    <input id="zip_code" type="text" class="validate">
+                    <label for="zip_code">Zip Code</label>
+                </div>
+                <div class="input-field col s4" id="roomType">
+                    <select>
+                        <option value="" disabled selected>Choose your option</option>
+                        <option value="Entire Home/Apt">Entire Home/Apt</option>
+                        <option value="Private room">Private Room</option>
+                        <option value="Shared room">Shared Room</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s4">
+                    <input id="price" type="text" class="validate">
+                    <label for="price">Price</label>
+                </div>
+                <div class="input-field col s4">
+                    <input id="min_night" type="text" class="validate">
+                    <label for="email">Minimum Night Stay</label>
+                </div>
+                <div class="input-field col s4">
+                    <input id="availability" type="text" class="validate">
+                    <label for="availability">Availability</label>
+                </div>
+            </div>
+        </form>
+        <form>
+            <button class="btn waves-effect" type="submit" name="action">Submit</button>
+        </form>
+    </div>
         </div>
         <div class="row">
             <br/>
@@ -49,8 +90,6 @@
 
 
         </div>
-        <br/>
-        <br/>
     <footer class="page-footer">
         Data provided by ©Google
     </footer>
@@ -78,36 +117,6 @@
                 $('.carousel').carousel('next')
             }, 5000);
             $(".dropdown-button btn")
-
-
-            var locations = [
-                ['Lovely cabin, great Asheville spot', -82.5914663, 35.59078366, 4],
-                ['Mixed Dorm', -82.59639207, 35.57915861, 5],
-                ];
-
-                var map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 10,
-                center: new google.maps.LatLng(-82.59, 35.58),
-                mapTypeId: google.maps.MapTypeId.ROADMAP
-                });
-
-                var infowindow = new google.maps.InfoWindow();
-
-                var marker, i;
-
-                for (i = 0; i < locations.length; i++) { 
-                marker = new google.maps.Marker({
-                    position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-                    map: map
-                });
-
-                google.maps.event.addListener(marker, 'click', (function(marker, i) {
-                    return function() {
-                    infowindow.setContent(locations[i][0]);
-                    infowindow.open(map, marker);
-                    }
-                })(marker, i));
-                }
         });
     </script>
 </body>
