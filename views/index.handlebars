@@ -56,17 +56,6 @@
     </footer>
     <script>
         $(document).ready(function () {
-            $('#submit').on("click", function () {
-                var userInput = {
-                    full_name: $('#full_name'),
-                    zip_code: $('#zip_code'),
-                    roomType: $('#roomType'),
-                    price: $('#price'),
-                    min_night: $('#min_night'),
-                    availability: $('#availability')
-                }
-                consol.log(userInput);
-            });
             $('select').material_select();
             $('.carousel').carousel({
                 dist: 0
@@ -77,7 +66,6 @@
             window.setInterval(function () {
                 $('.carousel').carousel('next')
             }, 5000);
-            $(".dropdown-button btn")
 
 
             var locations = [

@@ -9,7 +9,7 @@ if (process.env.JAWSDB_URL) {
         root: 3000,
         host: 'localhost',
         user: 'root',
-        password: 'Lawingbo42!',
+        password: 'root',
         database: 'asheville_db',
     });
 };
