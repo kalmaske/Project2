@@ -21,7 +21,7 @@ app.use(passport.session());
 
 
 app.use(bodyParser.json());
-//app.use(express.static("public"));
+app.use(express.static("public"));
 app.use(bodyParser.urlencoded({
 	extended: false
 }))
@@ -37,8 +37,8 @@ var routes = require('./controllers/controller.js');
 app.use('/', routes);
 
 // // Requiring our routes
-// require("./routes/html-routes.js")(app);
-// require("./routes/api-routes.js")(app);
+require("./routes/html-routes.js")(app);
+require("./routes/api-routes.js")(app);
 
 var PORT = process.env.PORT || 8008;
 db.sequelize.sync({force:true}).then(function() {
