@@ -2,6 +2,7 @@
     <nav>
         <div class="nav-wrapper">
             <img src="./assets/images/airbnb.png" alt="logo" align="left" width="60px" height="60px">
+            <span>Hello, <span class="member-name"></span></span>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li><a href="/logout">Log Out</a></li>
                 {{!-- <li><a href="/signup">Sign Up</a></li> --}}
@@ -43,15 +44,19 @@
     <div class="row">
         <form class="col s12">
             <div class="row">
-                <div class="input-field col s4">
-                    <input id="full_name" type="text" class="validate">
-                    <label for="full_name">Full Name</label>
-                </div>
-                <div class="input-field col s4">
+                <div class="input-field col s6">
                     <input id="zip_code" type="text" class="validate">
                     <label for="zip_code">Zip Code</label>
                 </div>
-                <div class="input-field col s4" id="roomType">
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="description" type="text" class="validate">
+                    <label for="description">Description</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6" id="roomType">
                     <select>
                         <option value="" disabled selected>Choose your option</option>
                         <option value="Entire Home/Apt">Entire Home/Apt</option>
@@ -59,19 +64,25 @@
                         <option value="Shared room">Shared Room</option>
                     </select>
                 </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s4">
+                <div class="input-field col s6">
                     <input id="price" type="text" class="validate">
                     <label for="price">Price</label>
                 </div>
-                <div class="input-field col s4">
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
                     <input id="min_night" type="text" class="validate">
                     <label for="email">Minimum Night Stay</label>
                 </div>
-                <div class="input-field col s4">
+                <div class="input-field col s6">
                     <input id="availability" type="text" class="validate">
                     <label for="availability">Availability</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="availability" type="text" class="validate">
+                    <label for="availability">Add Images</label>
                 </div>
             </div>
         </form>
@@ -104,7 +115,7 @@
                     min_night: $('#min_night'),
                     availability: $('#availability')
                 }
-                consol.log(userInput);
+                console.log(userInput);
             });
             $('select').material_select();
             $('.carousel').carousel({
@@ -116,7 +127,6 @@
             window.setInterval(function () {
                 $('.carousel').carousel('next')
             }, 5000);
-            $(".dropdown-button btn")
         });
     </script>
 </body>

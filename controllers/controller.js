@@ -19,6 +19,19 @@ router.get('/asheville', function (req, res) {
 		});
 });
 
+router.get('/home', function (req, res) {
+	db.asheville.findAll({})
+		.then(function (data) {
+			var hbsObject = {
+				listings: data
+			};
+
+			console.log(hbsObject);
+
+			res.render('home', hbsObject);
+		});
+});
+
 router.post('/asheville/create', function (req, res) {
 
 	db.listings.create(['name'], [req.body.name], function (data) {
