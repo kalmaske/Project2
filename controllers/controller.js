@@ -20,9 +20,12 @@ router.get('/asheville', function (req, res) {
 });
 
 router.get('/home', function (req, res) {
+	
+	
 	db.ashevilles.findAll({})
 		.then(function (data) {
 			var hbsObject = {
+				user : req.user,
 				ashevilles: data
 			};
 
