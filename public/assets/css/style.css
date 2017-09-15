@@ -79,6 +79,10 @@ h1 {
     font-family: 'Dancing Script', cursive;
 }
 
+fieldset {
+    border: none;
+}
+
 @media screen and (max-width: 640px) {
     .row .col.s6 {
         width: 95%;
