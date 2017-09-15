@@ -1,9 +1,12 @@
 <body>
     <nav>
         <div class="nav-wrapper">
+        
             <img src="./assets/images/airbnb.png" alt="logo" align="left" width="60px" height="60px">
-            <span>Hello, <span class="member-name"></span></span>
+                    <span>Welcome <span class="member-name"></span></span>
+
             <ul id="nav-mobile" class="right hide-on-med-and-down">
+        
                 <li><a href="/logout">Log Out</a></li>
                 {{!-- <li><a href="/signup">Sign Up</a></li> --}}
             </ul>
@@ -104,9 +107,19 @@
     <footer class="page-footer">
         Data provided by ©Google
     </footer>
+
     <script>
+       
+  // This file just does a GET request to figure out which user is logged in
+  // and updates the HTML on the page
+
+
         $(document).ready(function () {
+              $.get("/api/user_data").then(function (data) {
+    $(".member-name").text(data.name);
+  });
             $('#submit').on("click", function () {
+                
                 var userInput = {
                     full_name: $('#full_name'),
                     zip_code: $('#zip_code'),
