@@ -47,7 +47,7 @@ require("./routes/api-routes.js")(app);
 
 var PORT = process.env.PORT || 8008;
 db.sequelize.sync({
-  force: true
+  //force: true
 }).then(function () {
   app.listen(PORT, function () {
     console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT);

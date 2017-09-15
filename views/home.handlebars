@@ -1,9 +1,10 @@
 <body>
     <nav>
         <div class="nav-wrapper">
+            
         
             <img src="./assets/images/airbnb.png" alt="logo" align="left" width="60px" height="60px">
-                    <span>Welcome {{user.name}}</span>
+                    <span id="welcome">Welcome {{user.name}}</span>
 
             <ul id="nav-mobile" class="right hide-on-med-and-down">
         
@@ -83,10 +84,10 @@
                 </div>
             </div>
             <div class="row">
-                <div class="input-field col s12">
-                    <input id="availability" type="text" class="validate">
-                    <label for="availability">Add Images</label>
-                </div>
+                <fieldset class="form-group">
+                        <label for="photo">Link to Photo Image (Required)</label>
+                        <input type="text" class="form-control" placeholder="http://pic.jpg" id="photo" name="photo" required>
+                    </fieldset>
             </div>
             <button class="btn waves-effect" type="submit" name="action" id="submit">Submit</button>
         </form>
@@ -114,6 +115,8 @@
 
 
         $(document).ready(function () {
+            $("#welcome").html(titleizeName($("#welcome").html()));
+
               $.get("/api/user_data").then(function (data) {
     $(".member-name").text(data.name);
   });
