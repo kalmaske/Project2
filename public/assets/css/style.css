@@ -71,8 +71,15 @@ nav,
     max-height: 100%;
     height: auto;
 }
+p{
+    color: #141313;
+    position: relative;
+    font-size: 40px;
+    font-family: 'Dancing Script', cursive;
+  
+}
 
-h1 {
+h1{
     color: #141313;
     position: relative;
     font-size: 60px;
