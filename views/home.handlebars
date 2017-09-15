@@ -42,7 +42,7 @@
     <br/>
     <br/>
     <div class="row">
-        <form class="col s12">
+        <form class="col s12" action="/asheville/create" method="POST">
             <div class="row">
                 <div class="input-field col s6">
                     <input id="zip_code" type="text" class="validate">
@@ -85,10 +85,9 @@
                     <label for="availability">Add Images</label>
                 </div>
             </div>
+            <button class="btn waves-effect" type="submit" name="action" id="submit">Submit</button>
         </form>
-        <form>
-            <button class="btn waves-effect" type="submit" name="action">Submit</button>
-        </form>
+            
     </div>
         </div>
         <div class="row">
@@ -108,14 +107,16 @@
         $(document).ready(function () {
             $('#submit').on("click", function () {
                 var userInput = {
-                    full_name: $('#full_name'),
-                    zip_code: $('#zip_code'),
-                    roomType: $('#roomType'),
-                    price: $('#price'),
-                    min_night: $('#min_night'),
-                    availability: $('#availability')
+                    name: $("#description").val(),
+                    zip_code: $('#zip_code').val(),
+                    room_type: $('#roomType').val(),
+                    price: $('#price').val(),
+                    min_night: $('#min_night').val(),
+                    availability: $('#availability').val()
                 }
-                console.log(userInput);
+                $.post("/asheville/create", userInput).done(function(result) {
+
+                });
             });
             $('select').material_select();
             $('.carousel').carousel({

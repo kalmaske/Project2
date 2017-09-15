@@ -17,6 +17,11 @@ module.exports = function (sequelize, DataTypes) {
 			allowNull: false,
 			len: [1]
 		},
+		room_type: {
+			type: DataTypes.STRING,
+			allowNull: false,
+			len: [1]
+		},
 		minimum_nights: {
 			type: DataTypes.INTEGER,
 			allowNull: false,
