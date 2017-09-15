@@ -1,6 +1,6 @@
 var db = require("../models");
 var passport = require("../config/passport");
-var titleizeName = require("../titleizeName.js")
+
 
 
 module.exports = function(app) {
@@ -46,7 +46,7 @@ module.exports = function(app) {
       // Otherwise send back the user's email and id
       // Sending back a password, even a hashed password, isn't a good idea
       res.json({
-        name: titleizeName(req.user.name),
+        name: req.user.name,
         email: req.user.email,
         id: req.user.id
       });

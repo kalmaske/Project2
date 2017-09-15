@@ -1,9 +1,10 @@
 <body>
     <nav>
         <div class="nav-wrapper">
+            
         
             <img src="./assets/images/airbnb.png" alt="logo" align="left" width="60px" height="60px">
-                    <span>Welcome {{user.name}}</span>
+                    <span id="welcome">Welcome {{user.name}}</span>
 
             <ul id="nav-mobile" class="right hide-on-med-and-down">
         
@@ -114,6 +115,8 @@
 
 
         $(document).ready(function () {
+            $("#welcome").html(titleizeName($("#welcome").html()));
+
               $.get("/api/user_data").then(function (data) {
     $(".member-name").text(data.name);
   });
