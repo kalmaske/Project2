@@ -40,7 +40,8 @@ body {
     margin: 0 auto;
 }
 
-nav {
+nav,
+.navbar-default {
     background-color: #26a69a;
 }
 
