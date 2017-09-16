@@ -1,6 +1,6 @@
 var db = require("../models");
 var passport = require("../config/passport");
-var titleizeName = require("../titleizeName.js")
+
 
 
 module.exports = function(app) {

@@ -107,26 +107,38 @@
     <footer class="page-footer">
         Data provided by ©Google
     </footer>
+    
+<script>
+    $(document).ready(function () {
+           $("#welcome").html(titleizeName($("#welcome").html()));
 
-    <script>
-        // This file just does a GET request to figure out which user is logged in
-        // and updates the HTML on the page
+             $.get("/api/user_data").then(function (data) {
+   $(".member-name").text(data.name);
+ });
+           $('#submit').on("click", function () {
+               
+               var userInput = {
+                   name: $("#description").val(),
+                   zip_code: $('#zip_code').val(),
+                   room_type: $('#roomType').val(),
+                   price: $('#price').val(),
+                   min_night: $('#min_night').val(),
+                   availability: $('#availability').val()
+               }
+               $.post("/asheville/create", userInput).done(function(result) {
 
-
-        $(document).ready(function () {
-            $.get("/api/user_data").then(function (data) {
-                $(".member-name").text(data.name);
-            });
-            $('select').material_select();
-            $('.carousel').carousel({
-                dist: 0
-            });
-            $('.carousel.carousel-slider').carousel({
-                fullWidth: true
-            });
-            window.setInterval(function () {
-                $('.carousel').carousel('next')
-            }, 5000);
-        });
-    </script>
+               });
+           });
+           $('select').material_select();
+           $('.carousel').carousel({
+               dist: 0
+           });
+           $('.carousel.carousel-slider').carousel({
+               fullWidth: true
+           });
+           window.setInterval(function () {
+               $('.carousel').carousel('next')
+           }, 5000);
+       });
+   </script>
 </body>
