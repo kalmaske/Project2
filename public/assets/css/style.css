@@ -40,7 +40,8 @@ body {
     margin: 0 auto;
 }
 
-nav {
+nav,
+.navbar-default {
     background-color: #26a69a;
 }
 
@@ -70,12 +71,23 @@ nav {
     max-height: 100%;
     height: auto;
 }
+p{
+    color: #141313;
+    position: relative;
+    font-size: 40px;
+    font-family: 'Dancing Script', cursive;
+  
+}
 
-h1 {
+h1{
     color: #141313;
     position: relative;
     font-size: 60px;
     font-family: 'Dancing Script', cursive;
+}
+
+fieldset {
+    border: none;
 }
 
 @media screen and (max-width: 640px) {

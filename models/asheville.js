@@ -1,47 +1,37 @@
 module.exports = function (sequelize, DataTypes) {
-	var asheville = sequelize.define("asheville", {
-		property: {
-			type: DataTypes.INTEGER,
-			allowNull: false,
-			validate: {
-				len: [1]
-			}
-		},
+	var ashevilles = sequelize.define("ashevilles", {
 		name: {
 			type: DataTypes.STRING,
 			allowNull: false,
-			len: [1]
+			validate: {
+				len: [5]
+			}
 		},
-		host_id: {
-			type: DataTypes.INTEGER,
-			allowNull: false,
-			len: [1]
-		},
-		host_name: {
-			type: DataTypes.STRING,
-			allowNull: false,
-			len: [1]
-		},
-
 		neighbourhood: {
 			type: DataTypes.INTEGER,
 			allowNull: false,
-			len: [5]
+			// len: [1]
+		},
+		price: {
+			type: DataTypes.DOUBLE,
+			allowNull: false,
+			// len: [1]
 		},
 		room_type: {
 			type: DataTypes.STRING,
-			allowNull: false,
+			// allowNull: false,
 			len: [1]
 		},
-		room_type: {
+		minimum_nights: {
 			type: DataTypes.INTEGER,
 			allowNull: false,
-			len: [1]
+			// len: [1]
 		},
+
 		availability_365: {
 			type: DataTypes.INTEGER,
 			allowNull: false,
-			len: [1]
+			// len: [1]
 		}
 
 
@@ -49,5 +39,5 @@ module.exports = function (sequelize, DataTypes) {
 
 	});
 
-	return asheville;
+	return ashevilles;
 };

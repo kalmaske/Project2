@@ -41,21 +41,22 @@
         </div>
         <div class="row">
             <br/>
-            <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+            {{!-- <input id="pac-input" class="controls" type="text" placeholder="Search Box"> --}}
 
-            <div id="map">
+            {{!-- <div id="map">
                 {{{this.map}}}
-            </div>
+            </div> --}}
 
 
         </div>
         <br/>
         <br/>
-    <footer class="page-footer">
+    {{!-- <footer class="page-footer">
         Data provided by ©Google
-    </footer>
+    </footer> --}}
     <script>
         $(document).ready(function () {
+            
             $('select').material_select();
             $('.carousel').carousel({
                 dist: 0
@@ -68,34 +69,7 @@
             }, 5000);
 
 
-            var locations = [
-                ['Lovely cabin, great Asheville spot', -82.5914663, 35.59078366, 4],
-                ['Mixed Dorm', -82.59639207, 35.57915861, 5],
-                ];
-
-                var map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 10,
-                center: new google.maps.LatLng(-82.59, 35.58),
-                mapTypeId: google.maps.MapTypeId.ROADMAP
-                });
-
-                var infowindow = new google.maps.InfoWindow();
-
-                var marker, i;
-
-                for (i = 0; i < locations.length; i++) { 
-                marker = new google.maps.Marker({
-                    position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-                    map: map
-                });
-
-                google.maps.event.addListener(marker, 'click', (function(marker, i) {
-                    return function() {
-                    infowindow.setContent(locations[i][0]);
-                    infowindow.open(map, marker);
-                    }
-                })(marker, i));
-                }
+  
         });
     </script>
 </body>
